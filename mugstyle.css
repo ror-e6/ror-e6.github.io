@@ -1,0 +1,107 @@
+
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.body{
+  font-family: 'Poppins', sans-serif; /* Use Google Font 'Poppins' */
+}
+.headerlogo {
+  width: 105px;
+  height: 110px;
+  background-color: #690d0d;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+.headerlogo img {
+    max-width: 110px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.headertitlebar {
+  width: 100%;
+  height: 110px;
+  background-color: #690d0d;
+  position: fixed;
+  left: 105px;
+  top: 0;
+}
+
+.headertitlebar h1 {
+  color: white;
+  font-family: "Poppins", sans-serif;
+  font-size: 70px;
+  font-weight: normal;
+  margin-top: 0px;
+  margin-left: 20px;
+  position:fixed
+}
+
+/* The sidenav */
+.sidenav {
+  top: 110px;
+  height: 92%;
+  width: 120px;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  background-color: #690d0d;
+  overflow-x: scroll;
+
+}
+  
+  /* The navigation menu links */
+.sidenav a {
+  display: block; /* Make anchor elements block-level */
+  text-align: center; /* Center the text inside anchor elements */
+
+  }
+
+.sidenav img {
+  width: 90px;
+  height: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 20px;
+}
+
+.sidenav a:hover {
+  opacity: 50%;
+  zoom: 1.15;
+}
+
+.main {
+  margin-left: 100px;
+  margin-top: 100px;
+  padding: 0px 10px;
+  height: 100%;
+  width: 100%;
+}
+
+#stats {
+  padding: 20px;
+  background-color:white;
+  margin-top: 20px;
+}
