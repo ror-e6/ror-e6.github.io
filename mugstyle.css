@@ -1,28 +1,26 @@
-
-
+/* SIDENAV SCROLL BAR */
 /* width */
 ::-webkit-scrollbar {
   width: 10px;
 }
-
 /* Track */
 ::-webkit-scrollbar-track {
   background: #f1f1f1;
 }
-
 /* Handle */
 ::-webkit-scrollbar-thumb {
   background: #888;
 }
-
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
 
-.body{
+body {
   font-family: 'Poppins', sans-serif; /* Use Google Font 'Poppins' */
+  margin: 0; /* Remove default margin */
 }
+
 .headerlogo {
   width: 105px;
   height: 110px;
@@ -30,78 +28,122 @@
   position: fixed;
   left: 0;
   top: 0;
+  z-index: 2; /* Ensure it stays on top */
 }
 
 .headerlogo img {
-    max-width: 110px;
-    height: auto;
-    display: block;
-    margin: 0 auto;
+  max-width: 100%; /* Ensure it scales properly */
+  height: auto;
+  display: block;
+  margin: 0 auto;
 }
 
 .headertitlebar {
-  width: 100%;
+  width: calc(100% - 105px); /* Adjust width to account for logo */
   height: 110px;
   background-color: #690d0d;
   position: fixed;
   left: 105px;
   top: 0;
+  z-index: 1;
 }
 
 .headertitlebar h1 {
   color: white;
-  font-family: "Poppins", sans-serif;
-  font-size: 70px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 50px; /* Adjusted font-size for better fit */
   font-weight: normal;
-  margin-top: 0px;
-  margin-left: 20px;
-  position:fixed
+  margin: 0; /* Remove default margin */
+  padding-left: 20px;
+  line-height: 110px; /* Center text vertically */
 }
 
-/* The sidenav */
+/* Sidenav */
 .sidenav {
   top: 110px;
-  height: 92%;
+  height: calc(100% - 110px);
   width: 120px;
   position: fixed;
   z-index: 1;
   left: 0;
   background-color: #690d0d;
-  overflow-x: scroll;
-
+  overflow-y: scroll; /* Use overflow-y for vertical scroll */
+  overflow-x: hidden; /* Hide horizontal overflow */
 }
-  
-  /* The navigation menu links */
+
+/* The sidenav links */
 .sidenav a {
   display: block; /* Make anchor elements block-level */
   text-align: center; /* Center the text inside anchor elements */
-
-  }
+}
 
 .sidenav img {
   width: 90px;
-  height: 100%;
+  height: auto; /* Maintain aspect ratio */
   display: block;
-  margin-left: auto;
-  margin-right: auto;
-  padding-bottom: 20px;
+  margin: 10px auto; /* Center images and add margin */
 }
 
 .sidenav a:hover {
-  opacity: 50%;
-  zoom: 1.15;
+  opacity: 0.7;
+  transform: scale(1.15);
+  transition: transform 0.3s, opacity 0.3s;
 }
 
 .main {
-  margin-left: 100px;
-  margin-top: 100px;
-  padding: 0px 10px;
-  height: 100%;
-  width: 100%;
+  margin-top: 60px;
+  margin-left: 120px;
+  padding: 20px;
+  overflow: hidden;
 }
 
 #stats {
   padding: 20px;
-  background-color:white;
   margin-top: 20px;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center; /* Align items vertically */
+}
+
+#stats h2 {
+  color: #f20a0a;
+  font-size: 50px;
+  margin-bottom: 10px; /* Adjust spacing below heading */
+}
+
+#stats p {
+    font-size: 24px;
+    color: #000000;
+    margin-bottom: 8px;
+  }
+
+  .team-info {
+    width: 20%; /* Adjust width as needed */
+    float: right; /* Float it to the right side */
+    padding: 20px; /* Add padding for spacing */
+    box-sizing: border-box; /* Include padding and border in width calculation */
+  }
+
+  .team-emblem img {
+    height: auto;
+    width: 400px;
+    float: left;
+    margin-right: 20px;
+  }
+  
+@media (max-width: 768px) {
+  .headertitlebar h1 {
+    font-size: 20px;
+  }
+
+  .main {
+    margin-top: 130px; /* Adjust margin for smaller screens */
+  }
+  .emblem,
+  .team-info {
+    float: none; /* Remove float on smaller screens */
+    width: 100%; /* Adjust width for smaller screens */
+    margin-right: 0; /* Remove margin for smaller screens */
+  }
 }
